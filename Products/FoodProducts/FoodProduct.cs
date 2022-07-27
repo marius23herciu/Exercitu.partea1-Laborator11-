@@ -1,5 +1,4 @@
 ﻿using Exercitu.partea1_Laborator11_.Products.Interfaces;
-using Exercitu.partea1_Laborator11_.Products.TaxesCalculatorObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +7,6 @@ namespace Exercitu.partea1_Laborator11_.Products.FoodProducts
 {
     abstract class FoodProduct:Product
     {
-        public FoodTaxes foodTaxes=new FoodTaxes();
         /// <summary>
         /// Creates food product.
         /// </summary>
@@ -17,6 +15,15 @@ namespace Exercitu.partea1_Laborator11_.Products.FoodProducts
         public FoodProduct(string name, double grossPrice):base (name, grossPrice)
         {
             
+        }
+        /// <summary>
+        /// Applies taxes for food products.
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns></returns>
+         public override sealed double ApplyTaxes(double price)
+        {
+            return price = price + price * 0.09;
         }
     }
 }

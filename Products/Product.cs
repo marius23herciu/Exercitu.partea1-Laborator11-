@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Exercitu.partea1_Laborator11_.Products
 {
-    abstract class Product
+    abstract class Product:ITaxesCalculatorStrategy
     {
         public string Name { get; set; }
         public Guid Id { get; set; }
@@ -32,10 +32,11 @@ namespace Exercitu.partea1_Laborator11_.Products
             {
                 return new Tag(this.Id, this.Name, this.GrossPrice);
             }
-            set
-            {
-                new Tag(this.Id, this.Name, this.GrossPrice);
-            }
+        }
+
+        public virtual double ApplyTaxes(double price)
+        {
+            throw new NotImplementedException();
         }
     }
 }

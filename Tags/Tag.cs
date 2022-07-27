@@ -39,19 +39,19 @@ namespace Exercitu.partea1_Laborator11_.Tags
             {
                 FoodProduct foodProduct = (FoodProduct)product;
                 
-                sb.Append($"{foodProduct.foodTaxes.ApplyTaxes(foodProduct.GrossPrice)} RON \n");
+                sb.Append($"{foodProduct.ApplyTaxes(foodProduct.GrossPrice)} RON \n");
             }
             if (product is HouseholdProduct)
             {
                 HouseholdProduct householdProduct  = (HouseholdProduct)product;
 
-                sb.Append($"{householdProduct.householdTaxes.ApplyTaxes(householdProduct.GrossPrice)} RON \n");
+                sb.Append($"{householdProduct.ApplyTaxes(householdProduct.GrossPrice)} RON \n");
             }
             if (product is Fuel)
             {
                 Fuel fuel = (Fuel)product;
 
-                sb.Append($"{fuel.fuelTaxes.ApplyTaxes(fuel.GrossPrice)} RON \n");
+                sb.Append($"{fuel.ApplyTaxes(fuel.GrossPrice)} RON \n");
             }
             return sb.ToString();
         }
